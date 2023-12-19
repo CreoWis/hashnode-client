@@ -1,0 +1,4 @@
+dist
+node_modules
+hashnode-client*.tgz
+.DS_Store
