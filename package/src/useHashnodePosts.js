@@ -23,8 +23,9 @@ export default function useHashnodePosts(settings = {}) {
       }catch(err){ 
         console.error("Error fetching blog data: ", err);
         setError(err);
+      } finally{
         setLoading(false);
-      };
+      }
     };
     
     getPosts();

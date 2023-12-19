@@ -13,14 +13,15 @@ export default function useHashnodePage(settings = {}) {
     const getPageInfo = async () => {  
       try{
         setLoading(true);
-        const res = await getPage(host, slug)
+        const res = await getPage(host, slug);
         setPage(res);
         setLoading(false);
       }catch(err){ 
         console.error("Error fetching blog static page: ", err);
         setError(err);
+      }finally{
         setLoading(false);
-      };
+      }
     };
 
     getPageInfo();

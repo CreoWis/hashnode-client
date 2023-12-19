@@ -1,8 +1,8 @@
 {
-  "name": "@hashnode/client",
-  "version": "1.0.0",
+  "name": "hashnode-client",
+  "version": "0.0.1",
   "type": "module",
-  "description": "A JavaScript client for the Headless Hashnode. The package contains helpful ReactJS hooks to query hashnode using its GraphQL APIs.",
+  "description": "A JavaScript client for the Headless Hashnode. The package contains helpful ReactJS hooks to use blog data using its GraphQL APIs.",
   "author": {
     "name": "Tapas Adhikary",
     "email": "tapas.adhikary@gmail.com",
@@ -18,20 +18,23 @@
   ],
   "main": "dist/index.js",
   "scripts": {
+    "create-tar": "npm pack --pack-destination='./tar'",
     "build:dev": "rollup -c --environment NODE_ENV:development",
     "build": "rollup -c --environment NODE_ENV:production"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Hashnode/js-client"
+    "url": "https://github.com/atapas/hashnode-client"
   },
   "bugs": {
-    "url": "https://github.com/Hashnode/js-client/issues"
+    "url": "https://github.com/atapas/hashnode-client/issues"
   },
   "license": "MIT",
   "dependencies": {
     "graphql": "^16.8.1",
-    "graphql-request": "^6.1.0"
+    "graphql-request": "^6.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "rollup": "^4.8.0",
