@@ -25,7 +25,7 @@ export default function useHashnodePage(settings = {}) {
     };
 
     getPageInfo();
-  }, []);
+  }, [host, slug]);
 
   return {
     loading, 

@@ -131,7 +131,7 @@ export const getComments = async (host, slug, first=10, endCursor) => {
 
   const data = await client.request(
     gql`
-      query allPosts($first: Int!, $host: String, $slug: String, $endCursor: String) {
+      query allPosts($first: Int!, $host: String, $slug: String!, $endCursor: String) {
         publication(host: $host) {
           post(slug: $slug) {
             comments(first: $first, after: $endCursor){

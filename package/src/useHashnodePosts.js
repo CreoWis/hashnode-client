@@ -29,7 +29,7 @@ export default function useHashnodePosts(settings = {}) {
     };
     
     getPosts();
-  }, []);
+  }, [host, first, endCursor, tags]);
 
   return {
     loading, 

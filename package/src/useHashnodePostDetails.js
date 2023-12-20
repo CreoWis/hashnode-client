@@ -25,7 +25,7 @@ export default function useHashnodePostDetails(settings = {}) {
     };
     
     getPostDetails();
-  }, []);
+  }, [host, slug]);
 
   return {
     loading, 
