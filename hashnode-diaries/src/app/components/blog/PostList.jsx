@@ -1,8 +1,10 @@
-import { Link } from "@remix-run/react";
-import { PostCard, LatestPost } from ".";
-import { getFormattedDate } from "../utils";
 
-export default function PostList({ posts }) {
+import PostCard from "./PostCard";
+import LatestPost from "./LatestPost";
+import { getFormattedDate } from "../../../utils";
+
+export default function PostList({host, posts }) {
+  console.log('postlist', posts);
   const latestPost = posts[0].node;
   const restPosts = posts.slice(1);
 
@@ -17,7 +19,7 @@ export default function PostList({ posts }) {
           <div className="grid gap-4 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {
               restPosts.map((post) => (
-                <PostCard key={post?.node?.slug} post={post?.node} />
+                <PostCard key={post?.node?.slug} host={host} post={post?.node} />
               ))
             }
           </div>

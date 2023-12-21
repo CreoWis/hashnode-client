@@ -1,10 +1,10 @@
-import { Link } from "@remix-run/react";
-import { getFormattedDate } from "../utils";
+import Link from "next/link";
+import { getFormattedDate } from "../../../utils";
 
-export default function PostCard({ post }) {
+export default function PostCard({ host, post }) {
   return (
     <div className="card bg-white shadow-lg rounded-lg overflow-hidden">
-      <Link to={`/posts/${post.slug}`}>
+      <Link href={`/publication/${host}/${post.slug}`}>
         <img
           alt="Cover image for A Guide to CSS Flexbox"
           className="object-cover w-full h-auto"

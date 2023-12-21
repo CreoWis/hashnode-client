@@ -1,9 +1,9 @@
-import { Link } from "@remix-run/react";
-import { getFormattedDate } from "../utils";
+import Link from "next/link";
+import { getFormattedDate } from "../../../utils";
 
 export default function LatestPost({ post }) {
   return (
-    <Link to={`/posts/${post.slug}`}>
+    <Link href={`/posts/${post.slug}`}>
       <article className="mt-4">
         <h3 className="text-xl font-semibold">{post.title}</h3>
         <p className="text-gray-500">
