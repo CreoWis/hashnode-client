@@ -11,7 +11,7 @@ export default function PostList({host, posts }) {
   return (
     <>
       <div className="px-8 py-8 bg-gray-100">
-        <LatestPost post={latestPost} /> 
+        <LatestPost post={latestPost} host={host}/> 
       </div>
       {
         restPosts.length > 0 && (

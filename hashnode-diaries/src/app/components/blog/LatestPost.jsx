@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { getFormattedDate } from "../../../utils";
 
-export default function LatestPost({ post }) {
+export default function LatestPost({ post, host }) {
   return (
-    <Link href={`/posts/${post.slug}`}>
+    <Link href={`/publication/${host}/${post.slug}`}>
       <article className="mt-4">
         <h3 className="text-xl font-semibold">{post.title}</h3>
         <p className="text-gray-500">
