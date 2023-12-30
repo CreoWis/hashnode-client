@@ -1,9 +1,9 @@
-import SearchBlog from "./components/search/SearchBlog"
+import SearchBlog from "./components/search/SearchBlog";
 
 export default function Home() {
   return (
-    <div className="h-screen flex justify-center items-center">
+    <div className="h-[90vh] flex justify-center items-center loginDesign">
       <SearchBlog />
     </div>
-  )
+  );
 }

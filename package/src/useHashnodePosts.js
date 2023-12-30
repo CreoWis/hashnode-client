@@ -10,12 +10,12 @@ export default function useHashnodePosts(settings = {}) {
 
   const { host, first, endCursor, tags } = settings;
 
-  const getPosts = async (host, first, endCursor, tags) => {
+  const getPosts = useCallback(async (host, first, endCursor, tags) => {
     try {
       setLoading(true);
       const res = await getAllPosts(host, first, endCursor, tags);
       setPageInfo(res.pageInfo);
-      setPosts((prev) => [...prev, ...res.edges]);
+      setPosts(res.edges);
       setTotalDocs(res.totalDocuments);
       setLoading(false);
     } catch (err) {
@@ -24,13 +24,29 @@ export default function useHashnodePosts(settings = {}) {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  const getMorePosts = useCallback(async (host, first, endCursor, tags) => {
+    try {
+      setLoading(true);
+      const res = await getAllPosts(host, first, endCursor, tags);
+      setPageInfo((prev) => [...prev, ...res.pageInfo]);
+      setPosts(res.edges);
+      setLoading(false);
+    } catch (err) {
+      console.error("Error fetching more post: ", err);
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
   useEffect(() => {
     getPosts(host, first, endCursor, tags);
   }, [host, first, endCursor, tags]);
 
   const loadMorePost = useCallback(() => {
-    getPosts(host, first, pageInfo.endCursor, tags);
+    getMorePosts(host, first, pageInfo.endCursor, tags);
   }, [pageInfo.endCursor]);
 
   return {

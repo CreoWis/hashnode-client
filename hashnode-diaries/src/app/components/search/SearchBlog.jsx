@@ -16,26 +16,25 @@ const SearchBlog = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex">
-        <input
-          type="text"
-          name="publication"
-          id="publication"
-          placeholder="Enter a publication URL"
-          onChange={(e) => setPublication(e.target.value)}
-          className="w-64 md:w-96 lg:w-96 rounded-md p-2 mr-3 border-[1px] border-black"
-        />
+      <div className="flex flex-col gap-2">
+        <div>
+          <input
+            type="text"
+            name="publication"
+            id="publication"
+            placeholder="Enter a publication url"
+            onChange={(e) =>
+              setPublication(e.target.value?.replace(/^https:\/\//, ""))
+            }
+            className="w-64 md:w-96 lg:w-96 p-4 border-[1px] border-black outline-black"
+          />
+        </div>
         <button
           onClick={searchPublication}
-          className="bg-purple-500 hover:bg-purple-700 p-1 rounded-lg text-white text-lg"
+          className="bg-black hover:bg-black p-2 text-white text-lg"
         >
           Search
         </button>
-      </div>
-      <div>
-        <p className="text-gray-500 text-sm px-1 py-1">
-          Please exclude https://
-        </p>
       </div>
     </div>
   );

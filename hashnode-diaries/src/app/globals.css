@@ -109,3 +109,35 @@ blockquote p {
   margin-right: 2px;
   text-decoration: underline;
 }
+
+.loginDesign {
+  background-image: repeating-linear-gradient(
+      90deg,
+      hsla(196, 0%, 79%, 0.06) 0px,
+      hsla(196, 0%, 79%, 0.06) 1px,
+      transparent 1px,
+      transparent 96px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      hsla(196, 0%, 79%, 0.06) 0px,
+      hsla(196, 0%, 79%, 0.06) 1px,
+      transparent 1px,
+      transparent 96px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      hsla(196, 0%, 79%, 0.09) 0px,
+      hsla(196, 0%, 79%, 0.09) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      hsla(196, 0%, 79%, 0.09) 0px,
+      hsla(196, 0%, 79%, 0.09) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
+}

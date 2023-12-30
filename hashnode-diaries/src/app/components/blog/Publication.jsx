@@ -6,12 +6,17 @@ import { useCallback, useState } from "react";
 
 const Publication = ({ host }) => {
   const settings = { host: `${host}` };
-  const { loading, posts, loadMorePost } = useHashnodePosts(settings);
+  const { loading, posts, loadMorePost, pageInfo } = useHashnodePosts(settings);
+  console.log(pageInfo);
+  if (posts.length === 0 && loading) {
+    return <p>Loading Posts...</p>;
+  }
 
   return (
     <div>
       {posts && posts.length > 0 ? (
         <PostList
+          hasNextpage={pageInfo.hasNextPage}
           loading={loading}
           host={host}
           posts={posts}
