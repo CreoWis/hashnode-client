@@ -2,18 +2,26 @@
 import { useHashnodePosts } from "hashnode-client";
 import PostList from "./PostList";
 import NoPosts from "../search/NoPosts";
-import { useCallback, useState } from "react";
 
-const Publication = ({ host }) => {
-  const settings = { host: `${host}` };
+const Publication = ({ host, tag }) => {
+  const settings = { host: `${host}`, tags: `${tag}` };
   const { loading, posts, loadMorePost, pageInfo } = useHashnodePosts(settings);
-  console.log(posts);
+
+  const tagName = tag
+    ? posts[0]?.node.tags.filter((tagBox) => tagBox.id === tag)[0]?.name
+    : undefined;
+
   if (posts.length === 0 && loading) {
     return <p>Loading Posts...</p>;
   }
 
   return (
     <div>
+      {tagName && (
+        <h1 className="text-2xl font-bold px-8 py-4">
+          Results for Tag&nbsp;|&nbsp;{tagName}
+        </h1>
+      )}
       {posts && posts.length > 0 ? (
         <PostList
           hasNextPage={pageInfo.hasNextPage}

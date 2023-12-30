@@ -22,7 +22,7 @@ export default function PostDetails({ host, slug }) {
           <h2 className="text-xl pt-3 pb-3">{post.subtitle}</h2>
           <div className="flex mb-4">
             {post?.tags?.map((tag) => (
-              <Tag tag={tag} key={tag.id} />
+              <Tag tag={tag} key={tag.id} host={host} />
             ))}
           </div>
           <div
