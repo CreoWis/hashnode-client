@@ -10,43 +10,35 @@ export default function useHashnodePosts(settings = {}) {
 
   const { host, first, endCursor, tags } = settings;
 
-  const getPosts = useCallback(async (host, first, endCursor, tags) => {
-    try {
-      setLoading(true);
-      const res = await getAllPosts(host, first, endCursor, tags);
-      setPageInfo(res.pageInfo);
-      setPosts(res.edges);
-      setTotalDocs(res.totalDocuments);
-      setLoading(false);
-    } catch (err) {
-      console.error("Error fetching blog data: ", err);
-      setError(err);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  const getMorePosts = useCallback(async (host, first, endCursor, tags) => {
-    try {
-      setLoading(true);
-      const res = await getAllPosts(host, first, endCursor, tags);
-      setPageInfo((prev) => [...prev, ...res.pageInfo]);
-      setPosts(res.edges);
-      setLoading(false);
-    } catch (err) {
-      console.error("Error fetching more post: ", err);
-      setError(err);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
+  const getPosts = useCallback(
+    async (host, first, endCursor, tags, loadMore) => {
+      try {
+        setLoading(true);
+        const res = await getAllPosts(host, first, endCursor, tags);
+        setPageInfo(res.pageInfo);
+        if (loadMore) {
+          setPosts((prev) => [...prev, ...res.edges]);
+        } else {
+          setPosts(res.edges);
+        }
+        setTotalDocs(res.totalDocuments);
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching blog data: ", err);
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    },
+    []
+  );
 
   useEffect(() => {
-    getPosts(host, first, endCursor, tags);
+    getPosts(host, first, endCursor, tags, false);
   }, [host, first, endCursor, tags]);
 
   const loadMorePost = useCallback(() => {
-    getMorePosts(host, first, pageInfo.endCursor, tags);
+    getPosts(host, first, pageInfo.endCursor, tags, true);
   }, [pageInfo.endCursor]);
 
   return {

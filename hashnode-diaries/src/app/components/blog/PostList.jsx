@@ -12,7 +12,7 @@ export default function PostList({
   const restPosts = posts.slice(1);
 
   return (
-    <div className="pb-10">
+    <div>
       <div className="px-8 py-8 bg-gray-100">
         <LatestPost post={latestPost} host={host} />
       </div>
@@ -27,7 +27,7 @@ export default function PostList({
           <div className="w-full flex justify-center">
             <button
               disabled={loading || !hasNextPage}
-              className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-black text-white hover:bg-black/90 h-10 px-4 mt-8"
+              className="w-fit bg-black hover:bg-black p-2 text-white text-lg capitalize mt-8"
               onClick={loadNextPost}
             >
               {!hasNextPage

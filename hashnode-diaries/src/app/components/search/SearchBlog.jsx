@@ -26,6 +26,7 @@ const SearchBlog = () => {
               setPublication(e.target.value?.replace(/^https:\/\//, ""))
             }
             className="w-64 md:w-96 lg:w-96 p-4 border-[1px] border-black outline-black"
+            autoFocus
           />
         </div>
         <button
