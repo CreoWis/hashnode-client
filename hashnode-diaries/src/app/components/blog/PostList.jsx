@@ -12,7 +12,7 @@ export default function PostList({
   const restPosts = posts.slice(1);
 
   return (
-    <div>
+    <div className="pb-8">
       <div className="px-8 py-8 bg-gray-100">
         <LatestPost post={latestPost} host={host} />
       </div>
