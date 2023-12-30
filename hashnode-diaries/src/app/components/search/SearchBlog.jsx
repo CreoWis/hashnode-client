@@ -8,7 +8,6 @@ const SearchBlog = () => {
 
   const searchPublication = (event) => {
     event.preventDefault();
-    console.log(publication);
     if (publication) {
       router.push(`/publication/${publication}`);
     }

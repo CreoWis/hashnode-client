@@ -1,6 +1,5 @@
 import PostCard from "./PostCard";
 import LatestPost from "./LatestPost";
-import { getFormattedDate } from "../../../utils";
 
 export default function PostList({
   host,

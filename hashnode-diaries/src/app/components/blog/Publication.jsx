@@ -16,7 +16,7 @@ const Publication = ({ host }) => {
     <div>
       {posts && posts.length > 0 ? (
         <PostList
-          hasNextpage={pageInfo.hasNextPage}
+          hasNextPage={pageInfo.hasNextPage}
           loading={loading}
           host={host}
           posts={posts}
