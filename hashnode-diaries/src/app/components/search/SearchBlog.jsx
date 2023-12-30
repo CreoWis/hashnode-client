@@ -1,18 +1,18 @@
-'use client'
-import {useState} from 'react';
-import { useRouter } from 'next/navigation';
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const SearchBlog = () => {
   const [publication, setPublication] = useState(null);
   const router = useRouter();
 
-  const searchPublication = event => {
+  const searchPublication = (event) => {
     event.preventDefault();
     console.log(publication);
     if (publication) {
       router.push(`/publication/${publication}`);
     }
-  }
+  };
 
   return (
     <div className="flex flex-col">
@@ -23,7 +23,7 @@ const SearchBlog = () => {
           id="publication"
           placeholder="Enter a publication URL"
           onChange={(e) => setPublication(e.target.value)}
-          className="w-64 md:w-96 lg:w-96 rounded-md p-2 mr-3"
+          className="w-64 md:w-96 lg:w-96 rounded-md p-2 mr-3 border-[1px] border-black"
         />
         <button
           onClick={searchPublication}
