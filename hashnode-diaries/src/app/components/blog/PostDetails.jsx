@@ -12,7 +12,7 @@ export default function PostDetails({ host, slug }) {
   return (
     <>
       {!loading && (
-        <article className="bg-white p-3 mt-3 flex flex-col justify-center items-center">
+        <article className=" bg-white p-3 mt-10 mb-16 flex flex-col justify-center items-center">
           <img
             className="rounded-lg"
             src={post.coverImage?.url}
