@@ -1,6 +1,6 @@
 {
   "name": "hashnode-client",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "type": "module",
   "description": "A JavaScript client for the Headless Hashnode. The package contains helpful ReactJS hooks to use blog data using its GraphQL APIs.",
   "author": {
