@@ -4,7 +4,7 @@ import PostList from "./PostList";
 import NoPosts from "../search/NoPosts";
 
 const Publication = ({ host, tag }) => {
-  const settings = { host: `${host}`, tags: `${tag}` };
+  const settings = { host: host, tags: tag };
   const { loading, posts, loadMorePost, pageInfo } = useHashnodePosts(settings);
 
   const tagName = tag
