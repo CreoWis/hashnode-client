@@ -51,6 +51,9 @@ The following API methods are available in the package:
 
 We have build a demo project called `hashnode-diaries` that uses the hooks that we have mentioned above. Its a simple project that will take the url of your publication and fetch data from hashnode and demo ur project. You can run it locally and get an feel of how to use the package in a way that is beneficial to your project.
 
+<img width="1440" alt="image" src="https://github.com/atapas/hashnode-client/assets/41801340/fe34ad52-a033-404e-bc9d-10409b9e31fe">
+
+
 ## 🛠️ How to build the hashnode-client package?
 
 You can build the project using the following command.
