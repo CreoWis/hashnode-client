@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and [hashnode-client](../package/readme.md) package.
 
+## Demo
+
+Access this URL to see it working.
+
+- [Hashnode Diaries](https://hashnode-diaries.vercel.app/)
+
 ## Getting Started
 
 First, run the development server:
