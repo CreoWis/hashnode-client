@@ -42,8 +42,8 @@ Advantages are:
 ## How do you contribute to the project?
 To contribute to the hashnode-client project, please ensure the following:
 
-- You have read the Contributing Guide completely.
-- You have read and abide by the Code of Conduct.
+- You have read the [Contributing Guide](https://github.com/CreoWis/hashnode-client/blob/main/CONTRIBUTING.md) completely.
+- You have read and abide by the [Code of Conduct](https://github.com/CreoWis/hashnode-client/blob/main/CODE_OF_CONDUCT.md).
 - Feel free to add a feature by [creating a feature request](https://github.com/CreoWis/hashnode-client/issues/new/choose).
 - Feel free to fix a bug by [creating a bug-fixing issue](https://github.com/CreoWis/hashnode-client/issues/new/choose).
 
