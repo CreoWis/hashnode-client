@@ -35,10 +35,12 @@ export const getAllPosts = async (host, first=10, endCursor, tags) => {
                 }
                 publishedAt
                 readTimeInMinutes
-                replyCount
                 reactionCount
                 featuredAt
                 featured
+                comments(first: 10){
+                  totalDocuments
+                }
               }
             }
           }
@@ -87,6 +89,9 @@ export const getPost = async (host, slug) => {
             reactionCount
             featuredAt
             featured
+            comments(first: 10){
+              totalDocuments
+            }
           }
         }
       }

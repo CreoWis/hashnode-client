@@ -41,25 +41,40 @@ The following API methods are available in the package:
 
 ## 🔥 How to use
 
-To use the library, you need to import the API methods into your project.
+To use the library, you need to first import the API methods into your project.
 
-For example, here we are importing a couple of API methods from the library:
+```js
+import { 
+  useHashnodePosts, 
+  useHashnodePostDetails,
+  useHashnodePage 
+} from  "hashnode-client";
+```
+Then use them with their input parameters in the React component:
 
-```bash
-import { useHashnodePosts, useHashnodePostDetails} from  "hashnode-client"
+```js
+const settings = { host: "blog.greenroots.info" };
+
+const { 
+  loading, 
+  posts, 
+  loadMorePost, 
+  pageInfo } = useHashnodePosts(settings);
 ```
 
-> Note: If you are using NextJS please use this library in client component only as it uses useEffect and useState behind the scenes.
+
+> Note: If you are using NextJS please use this library in client component only as it uses useEffect and useState behind the scene.
 
 ## 🤾‍♀️ hashnode-client playground(demo)
 
-We have built a demo project called `hashnode-diaries` that uses the hooks that we have mentioned above. Its a simple project that will take the url of your publication and fetch data from hashnode and demo ur project. You can run it locally and get an feel of how to use the package in a way that is beneficial to your project.
+We have built a demo project called `hashnode-diaries` that uses the hooks that we have mentioned above. Its a simple project that will take the url of your publication and fetch data from hashnode and demo ur project. 
 
+You can [run it locally](../hashnode-diaries/README.md) and get an feel of how to use the package in a way that is beneficial to your project.
 
 
 ## 🛠️ How to build the hashnode-client package?
 
-You can build the project using the following command.
+You can build the project using the following command for the production environment:
 
 ```bash
 ## With NPM
@@ -68,9 +83,12 @@ npm run build
 ## With YARN
 yarn build
 
+## With PNPM
+pnpm run build
+
 ```
 
-You can build the project using the following command.
+In the development environment, none of the source files get minified. You can build the project using the following command for the development environment:
 
 ```bash
 ## With NPM
@@ -78,6 +96,9 @@ npm run build:dev
 
 ## With YARN
 yarn build:dev
+
+## With PNPM
+pnpm run build:dev
 
 ```
 
@@ -90,27 +111,46 @@ To create the package locally,
 - Create a directory called `tar` at the root of the `package` folder.
 - Execute the following command to create the tar package.
 
-```bash
-## With NPM
-npm run create-tar
+  ```bash
+  ## With NPM
+  npm run create-tar
 
-## With YARN
-yarn create-tar
-
-```
+  ## With YARN
+  yarn create-tar
+    
+  ## With PNPM
+  pnpm run create-tar
+  ```
 
 - The above command will create a tar package inside the `tar` folder.
-- You can install the tar package into your project using the follwing command:
+- You can now install the tar package into your project using the follwing command:
 
-```bash
-## With NPM
-npm install file:<PATH-TO-THE-TAR-FILE>
+  ```bash
+  ## With NPM
+  npm install file:<PATH-TO-THE-TAR-FILE>
 
-## With YARN
-yarn file:<PATH-TO-THE-TAR-FILE>
+  ## With YARN
+  yarn add file:<PATH-TO-THE-TAR-FILE>
 
-```
+  ## With PNPM
+  pnpm run file:<PATH-TO-THE-TAR-FILE>
+  ```
 
 ## 💁 How to contribute to the hashnode-client project?
 
-`<LEAVE THIS FOR ME>`
+To contribute to the `hashnode-client` project, please ensure:
+
+- You have read the Contributing Guide completly.
+- You have read and abide by the Code of Conduct.
+- Feel free to add a feature by creating a feature request.
+- Feel free to fix a bug by creating an bug fixing issue.
+
+Note that, it is not just about coding contribution, You can also contribute on the following areas:
+- Test out the changes.
+- Write Tests.
+- Improve documentations.
+- Write content(blog/video) about the library.
+- Help us to socialize hashnode-client.
+- Anything else that impact this project positively.
+
+Open Source is all about the collaboration and proper communication. Let's go.
