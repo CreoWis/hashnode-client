@@ -2,6 +2,7 @@
 import { useHashnodePosts } from "hashnode-client";
 import PostList from "./PostList";
 import NoPosts from "../search/NoPosts";
+import Link from "next/link";
 
 const Publication = ({ host, tag }) => {
   const settings = { host: host, tags: tag };
@@ -17,8 +18,13 @@ const Publication = ({ host, tag }) => {
 
   return (
     <div>
+      <div className="w-full flex items-end bg-gray-100">
+        <Link className="text-xl ml-auto px-3 pt-2" href={`${host}/about`}>
+          About Page
+        </Link>
+      </div>
       {tagName && (
-        <h1 className="text-2xl font-bold px-8 py-4">
+        <h1 className="text-2xl font-bold px-8 py-4 bg-gray-100">
           Results for Tag&nbsp;|&nbsp;{tagName}
         </h1>
       )}
