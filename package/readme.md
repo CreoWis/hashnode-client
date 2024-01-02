@@ -34,6 +34,10 @@ The following API methods are available in the package:
 | `useHashnodeDetails` | Fetch all the details of a particular post from a publication.               | - `host` (mandatory): Hashnode Publication URL of your blog            | - `loading`: Indicates ongoing or completed data fetching    |
 |                      |                                                           | - `slug` (mandatory): Hashnode Post slug                     | - `error`: Info about any error during data fetching         |
 |                      |                                                           |                                                           | - `post`: Object with complete details of the fetched post   |
+| `useHashnodePage` | Fetch the content of a static page from a publication.               | - `host` (mandatory): Hashnode Publication URL of your blog            | - `loading`: Indicates ongoing or completed data fetching    |
+|                      |                                                           | - `slug` (mandatory): Hashnode page slug                     | - `error`: Info about any error during data fetching         |
+|                      |                                                           |                                                           | - `page`: The page content in the HTML format   |
+
 
 ## 🔥 How to use
 
