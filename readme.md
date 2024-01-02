@@ -33,7 +33,7 @@ Hence, you will find two primary project directories here:
 Please check the [package](./package/readme.md) and [hashnode-diaries](./hashnode-diaries/README.md) projects to learn how to run them locally.
 
 ## Why did we create it?
-Developers should blog. At the same time, they need to customize and personaize their blog front end user interfaces. In that case, locking the blog with a specific vendor may not be a good idea. The `Headless Hashnode` is a great innovation where we get all our blog data through GraphQL APIs along with getting the opportunity to use the Hashnode infrastructure under the hood.
+Developers should blog. At the same time, they need to customize and personaize their blog front-end user interfaces. In that case, locking the blog with a specific vendor may not be a good idea. The `Headless Hashnode` is a great innovation where we get all our blog data through GraphQL APIs along with getting the opportunity to use the Hashnode infrastructure under the hood.
 
 It means we can create a blog front end of our choice using GraphQL APIs. Considering most web developers today are ReactJS-focused (with all due respect to every other technology on the earth!), we have created this NPM package to make things easy for React developers. They can just use this package to import a few hooks(utilities) they need and get the job done!
 
