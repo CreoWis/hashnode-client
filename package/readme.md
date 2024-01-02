@@ -10,13 +10,13 @@ Use the following command to download and install the package as a dependency of
 
 ```bash
 # With NPM
-npm install hashnode-client
+npm install hashnode-client@latest
 
 # With Yarn
-yarn add hashnode-client
+yarn add hashnode-client@latest
 
 # With PNPM
-pnpm install hashnode-client
+pnpm install hashnode-client@latest
 ```
 
 ## 📒 API documentation
