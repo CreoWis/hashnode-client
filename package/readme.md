@@ -1,10 +1,10 @@
 # hashnode-client
 
-`hashnode-client` is a community-driven Open Source Project provides APIs to interact with the `Headless Hashnode` from any `ReactJS` based applications. It means, you can use the APIs from ReactJS, Next.js, Gatsby, and with many more libraries and frameworks to build your blog front-end.
+`hashnode-client` is a community-driven Open Source Project that provides APIs to interact with the `Headless Hashnode` from any `ReactJS` based applications. It means you can use the APIs from ReactJS, Next.js, Gatsby, and many more libraries and frameworks to build your blog front end.
 
 ## 🏗️ Installation
 
-Use the follwong command to download and install the package as a dependency of your project.
+Use the following command to download and install the package as a dependency of your project.
 
 > Please note: You must have Node.js v18.0.0 or higher installed.
 
@@ -63,13 +63,13 @@ const {
 ```
 
 
-> Note: If you are using NextJS please use this library in client component only as it uses useEffect and useState behind the scene.
+> Note: If you are using NextJS, please use this library in the client component only, as it uses useEffect and useState behind the scenes.
 
 ## 🤾‍♀️ hashnode-client playground(demo)
 
-We have built a demo project called `hashnode-diaries` that uses the hooks that we have mentioned above. Its a simple project that will take the url of your publication and fetch data from hashnode and demo ur project. 
+We have built a demo project called `hashnode-diaries` that uses the hooks that we have mentioned above. It's a simple project that will take the URL of your publication and fetch data from hashcode, and demo ur project. 
 
-You can [run it locally](../hashnode-diaries/README.md) and get an feel of how to use the package in a way that is beneficial to your project.
+You can [run it locally](../hashcode-diaries/README.md) and get a feel of how to use the package in a way that is beneficial to your project.
 
 
 ## 🛠️ How to build the hashnode-client package?
@@ -123,7 +123,7 @@ To create the package locally,
   ```
 
 - The above command will create a tar package inside the `tar` folder.
-- You can now install the tar package into your project using the follwing command:
+- You can now install the tar package into your project using the following command:
 
   ```bash
   ## With NPM
@@ -136,21 +136,21 @@ To create the package locally,
   pnpm run file:<PATH-TO-THE-TAR-FILE>
   ```
 
-## 💁 How to contribute to the hashnode-client project?
+## 💁 How do you contribute to the project?
+To contribute to the hashnode-client project, please ensure the following:
 
-To contribute to the `hashnode-client` project, please ensure:
+- You have read the [Contributing Guide](https://github.com/CreoWis/hashnode-client/blob/main/CONTRIBUTING.md) completely.
+- You have read and abide by the [Code of Conduct](https://github.com/CreoWis/hashnode-client/blob/main/CODE_OF_CONDUCT.md).
+- Feel free to add a feature by [creating a feature request](https://github.com/CreoWis/hashnode-client/issues/new/choose).
+- Feel free to fix a bug by [creating a bug-fixing issue](https://github.com/CreoWis/hashnode-client/issues/new/choose).
 
-- You have read the Contributing Guide completly.
-- You have read and abide by the Code of Conduct.
-- Feel free to add a feature by creating a feature request.
-- Feel free to fix a bug by creating an bug fixing issue.
+Note that it is not just about coding contribution. You can also contribute to the following areas:
 
-Note that, it is not just about coding contribution, You can also contribute on the following areas:
 - Test out the changes.
 - Write Tests.
-- Improve documentations.
+- Improve documentation.
 - Write content(blog/video) about the library.
 - Help us to socialize hashnode-client.
-- Anything else that impact this project positively.
+- Anything else that impacts this project positively.
+- Open Source is all about collaboration and proper communication. Let's go.
 
-Open Source is all about the collaboration and proper communication. Let's go.
