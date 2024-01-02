@@ -1,0 +1,28 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "atapas",
+      "name": "Tapas Adhikary",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3633137?v=4",
+      "profile": "https://tapasadhikary.com",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "hashnode-client",
+  "projectOwner": "CreoWis"
+}
