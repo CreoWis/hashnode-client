@@ -13,7 +13,7 @@ export default function PostList({
 
   return (
     <div className="pb-8">
-      <div className="px-8 py-8 bg-gray-100">
+      <div className="px-8 pt-4 pb-8 bg-gray-100">
         <LatestPost post={latestPost} host={host} />
       </div>
       {restPosts.length > 0 && (
