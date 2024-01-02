@@ -11,7 +11,11 @@ Read everything about the `hashnode-client` package from [here](./package/readme
 Read about the `hashnode-diaries` application from [here](./hashnode-diaries/README.md).
 
 ## Support this project
-TBA
+Liked it? You can show your support with a STAR(⭐).
+
+### Many Thanks to all the `Stargazers` who have supported this project with stars(⭐)
+
+[![Thanks to all stargazers](https://git-lister.onrender.com/api/stars/CreoWis/hashnode-client?limit=15)](https://github.com/CreoWis/hashnode-client/stargazers)
 
 ## What is Headless Hashnode?
 [Headless Hashnode](https://hashnode.com/headless) empowers you to build a blog from the ground up using Hashnode's innovative GraphQL APIs. It is a powerful headless CMS optimized for building and running blogs.
@@ -56,7 +60,4 @@ Note that it is not just about coding contribution. You can also contribute to t
 - Help us to socialize hashnode-client.
 - Anything else that impacts this project positively.
 - Open Source is all about collaboration and proper communication. Let's go.
-
-## How can I sponsor the project?
-TBA
 
