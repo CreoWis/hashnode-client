@@ -35,6 +35,12 @@ export const getAllPosts = async (host, first=10, endCursor, tags) => {
                 }
                 publishedAt
                 readTimeInMinutes
+                reactionCount
+                featuredAt
+                featured
+                comments(first: 10){
+                  totalDocuments
+                }
               }
             }
           }
@@ -79,6 +85,13 @@ export const getPost = async (host, slug) => {
             coverImage {
               url
             }
+            replyCount
+            reactionCount
+            featuredAt
+            featured
+            comments(first: 10){
+              totalDocuments
+            }
           }
         }
       }
@@ -116,4 +129,50 @@ export const getPage = async (host, slug) => {
   );
 
   return page?.publication?.staticPage;
+};
+
+export const getComments = async (host, slug, first=10, endCursor) => {
+  const client = getClient();
+
+  const data = await client.request(
+    gql`
+      query allPosts($first: Int!, $host: String, $slug: String!, $endCursor: String) {
+        publication(host: $host) {
+          post(slug: $slug) {
+            comments(first: $first, after: $endCursor){
+              pageInfo{
+                hasNextPage
+                endCursor
+              }
+              totalDocuments
+              edges{
+                node{
+                  dateAdded
+                  author {
+                    name
+                    profilePicture
+                  }
+                  content{
+                    html
+                  }
+                  totalReactions
+                  myTotalReactions
+                  stamp
+                }
+              }
+            }
+                  
+          }
+        }
+      }
+    `,
+    { 
+      first: first,
+      slug: slug,
+      host: host,
+      endCursor: endCursor
+     }
+  );
+
+  return data?.publication?.posts?.comments;
 };

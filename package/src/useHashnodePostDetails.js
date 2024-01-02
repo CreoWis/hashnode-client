@@ -13,18 +13,19 @@ export default function useHashnodePostDetails(settings = {}) {
     const getPostDetails = async () => {
       try{
         setLoading(true);
-        const res = await getPost(host, slug)
+        const res = await getPost(host, slug);
         setPost(res);
         setLoading(false);
       }catch(err){ 
         console.error("Error fetching blog data: ", err);
         setError(err);
+      }finally{
         setLoading(false);
-      };
+      }
     };
     
     getPostDetails();
-  }, []);
+  }, [host, slug]);
 
   return {
     loading, 

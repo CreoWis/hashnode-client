@@ -9,18 +9,18 @@ export default [
     input: 'src/index.js',
     output: {
       file: 'dist/index.js',
-      format: 'cjs',
-      sourcemap: 'inline',
+      format: 'es',
+      sourcemap: !devMode ? 'inline' : false,
       plugins: [
-        terser({
+        !devMode && terser({
           ecma: 2020,
           mangle: { toplevel: true },
           compress: {
             module: true,
             toplevel: true,
             unsafe_arrows: true,
-            drop_console: !devMode,
-            drop_debugger: !devMode
+            drop_console: false,
+            drop_debugger: false
           },
           output: { quote_style: 1 }
         })
