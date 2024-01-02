@@ -24,10 +24,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/atapas/hashnode-client"
+    "url": "https://github.com/CreoWis/hashnode-client"
   },
   "bugs": {
-    "url": "https://github.com/atapas/hashnode-client/issues"
+    "url": "https://github.com/CreoWis/hashnode-client/issues"
   },
   "license": "MIT",
   "dependencies": {
