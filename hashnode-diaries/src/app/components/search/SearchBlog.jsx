@@ -19,14 +19,14 @@ const SearchBlog = () => {
       <div className="flex flex-col gap-2">
         <div>
           <h2 className="text-center text-2xl font-bold uppercase">
-            Try Hashnode Dairies 🚀📔
+            Try Hashnode Diaries 🚀📔
           </h2>
           <div className="flex text-base my-2 font-[500]">
             <TypeAnimation
               sequence={[
                 "A playground for the hashnode-client package", // Types 'One'
                 2000, // Waits 1s
-                "Get any Hahshnode blog data", // Deletes 'One' and types 'Two'
+                "Get any Hashnode blog data", // Deletes 'One' and types 'Two'
                 2000, // Waits 2s
                 "Open Source from CreoWis Technologies", // Types 'Three' without deleting 'Two'
                 2000,
