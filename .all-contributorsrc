@@ -27,6 +27,16 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "muhammedanaskhan",
+      "name": "Mohammad anas khan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/72510634?v=4",
+      "profile": "https://anaskhandev.vercel.app",
+      "contributions": [
+        "test",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

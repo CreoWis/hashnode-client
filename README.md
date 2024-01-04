@@ -1,6 +1,6 @@
 # Hashnode Client
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Hashnode client is a community-driven Open Source Project that provides APIs to interact with the `Headless Hashnode` from any `ReactJS` based applications. It means you can use the APIs from ReactJS, Next.js, Gatsby, and many more libraries and frameworks to build your blog front end.
@@ -77,6 +77,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://tapasadhikary.com"><img src="https://avatars.githubusercontent.com/u/3633137?v=4?s=100" width="100px;" alt="Tapas Adhikary"/><br /><sub><b>Tapas Adhikary</b></sub></a><br /><a href="#infra-atapas" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/CreoWis/hashnode-client/commits?author=atapas" title="Tests">⚠️</a> <a href="https://github.com/CreoWis/hashnode-client/commits?author=atapas" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/MrTea7171"><img src="https://avatars.githubusercontent.com/u/41801340?v=4?s=100" width="100px;" alt="Chaitanya Agarwal"/><br /><sub><b>Chaitanya Agarwal</b></sub></a><br /><a href="https://github.com/CreoWis/hashnode-client/commits?author=MrTea7171" title="Tests">⚠️</a> <a href="https://github.com/CreoWis/hashnode-client/commits?author=MrTea7171" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://anaskhandev.vercel.app"><img src="https://avatars.githubusercontent.com/u/72510634?v=4?s=100" width="100px;" alt="Mohammad anas khan"/><br /><sub><b>Mohammad anas khan</b></sub></a><br /><a href="https://github.com/CreoWis/hashnode-client/commits?author=muhammedanaskhan" title="Tests">⚠️</a> <a href="https://github.com/CreoWis/hashnode-client/commits?author=muhammedanaskhan" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
