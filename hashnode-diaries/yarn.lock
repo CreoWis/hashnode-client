@@ -1306,9 +1306,9 @@ has-tostringtag@^1.0.0:
   dependencies:
     has-symbols "^1.0.2"
 
-hashnode-client@../package/tar/hashnode-client-1.0.182.tgz:
-  version "1.0.182"
-  resolved "../package/tar/hashnode-client-1.0.182.tgz#47507d532491d811853fb8b8fdfe771f3b2ffe63"
+hashnode-client@../package/tar/hashnode-client-1.0.2.tgz:
+  version "1.0.2"
+  resolved "../package/tar/hashnode-client-1.0.2.tgz#723dc3cb432aea3cb46eb99dda5f617d2d5edf11"
   dependencies:
     graphql "^16.8.1"
     graphql-request "^6.1.0"
