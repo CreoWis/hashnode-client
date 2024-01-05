@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "hashnode-client": "^1.0.2",
+    "hashnode-client": "../package/tar/hashnode-client-1.0.2.tar",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
