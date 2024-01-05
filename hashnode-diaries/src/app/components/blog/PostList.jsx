@@ -27,7 +27,7 @@ export default function PostList({
           <div className="w-full flex justify-center">
             <button
               disabled={loading || !hasNextPage}
-              className="w-fit bg-black hover:bg-black p-2 text-white text-lg capitalize mt-8"
+              className="w-fit bg-black hover:bg-black p-2 text-white text-lg capitalize mt-8 disabled:bg-gray-600"
               onClick={loadNextPost}
             >
               {!hasNextPage
