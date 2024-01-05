@@ -2,6 +2,7 @@
 
 import Tag from "../tag/Tag";
 import { useHashnodePostDetails } from "hashnode-client";
+import PostComments from "./PostComments";
 
 export default function PostDetails({ host, slug }) {
   const { post, error, loading } = useHashnodePostDetails({
@@ -29,6 +30,9 @@ export default function PostDetails({ host, slug }) {
             className="post-details"
             dangerouslySetInnerHTML={{ __html: post?.content?.html }}
           />
+          <div className="w-full">
+            <PostComments host={host} postId={slug} />
+          </div>
         </article>
       )}
     </>

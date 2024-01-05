@@ -1,8 +1,7 @@
 import { getComments } from "./queries/blog-data";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export default function useHashnodeComments(settings = {}) {
-  
   const [pageInfo, setPageInfo] = useState({});
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -10,32 +9,44 @@ export default function useHashnodeComments(settings = {}) {
   const [totalComments, setTotalComments] = useState(0);
 
   const { host, first, endCursor, slug } = settings;
-  
-  useEffect(() => {
-    const getCommentsForPost = async () => {
-      try{
+
+  const getCommentsForPost = useCallback(
+    async (host, slug, first, endCursor, compound) => {
+      try {
         setLoading(true);
-        const res = await getComments(host, slug, first, endCursor)
+        const res = await getComments(host, slug, first, endCursor);
         setPageInfo(res.pageInfo);
-        setComments(res.edges);
+        if (compound) {
+          setComments((prev) => [...prev, ...res.edges]);
+        } else {
+          setComments(res.edges);
+        }
         setTotalComments(res.totalDocuments);
         setLoading(false);
-      }catch(err){ 
+      } catch (err) {
         console.error("Error fetching comments: ", err);
         setError(err);
-      } finally{
+      } finally {
         setLoading(false);
       }
-    };
-    
-    getCommentsForPost();
+    },
+    []
+  );
+
+  useEffect(() => {
+    getCommentsForPost(host, slug, first, endCursor, false);
   }, [host, first, endCursor, slug]);
 
+  const loadMoreComments = useCallback(() => {
+    getCommentsForPost(host, slug, first, endCursor, true);
+  }, [pageInfo.endCursor]);
+
   return {
-    loading, 
-    error, 
-    pageInfo, 
-    totalComments, 
-    comments
+    loading,
+    error,
+    pageInfo,
+    totalComments,
+    comments,
+    loadMoreComments,
   };
 }
