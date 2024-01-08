@@ -69,7 +69,7 @@ const {
 
 We have built a demo project called `hashnode-diaries` that uses the hooks that we have mentioned above. It's a simple project that will take the URL of your publication and fetch data from hashcode, and demo ur project. 
 
-You can [run it locally](../hashcode-diaries/README.md) and get a feel of how to use the package in a way that is beneficial to your project.
+You can [run it locally](https://github.com/CreoWis/hashnode-client/blob/main/hashnode-diaries/README.md) and get a feel of how to use the package in a way that is beneficial to your project.
 
 
 ## 🛠️ How to build the hashnode-client package?
