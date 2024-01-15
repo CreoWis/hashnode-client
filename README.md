@@ -11,7 +11,7 @@ The main goal of this project is to provide you with a public NPM package called
 Read everything about the `hashnode-client` package from [here](./package/readme.md).
 
 ## The `hashnode-diaries` Application
-Read about the `hashnode-diaries` application from [here](https://github.com/CreoWis/hashnode-diaries/README.md).
+Read about the `hashnode-diaries` application from [here](https://github.com/CreoWis/hashnode-diaries/blob/main/README.md).
 
 ## Support this project
 Liked it? You can show your support with a STAR(⭐).
