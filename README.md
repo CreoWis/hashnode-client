@@ -11,7 +11,7 @@ The main goal of this project is to provide you with a public NPM package called
 Read everything about the `hashnode-client` package from [here](./package/readme.md).
 
 ## The `hashnode-diaries` Application
-Read about the `hashnode-diaries` application from [here](./hashnode-diaries/README.md).
+Read about the `hashnode-diaries` application from [here](https://github.com/CreoWis/hashnode-diaries/README.md).
 
 ## Support this project
 Liked it? You can show your support with a STAR(⭐).
@@ -30,10 +30,10 @@ This project has two primary objectives:
 
 Hence, you will find two primary project directories here:
 - [package](./package/): Contains the source code to build and test the NPM package.
-- [hashnode-diaries](./hashnode-diaries/): A Next.js application uses the NPM package where you can provide any Hashnode blog URL to fetch the posts from them.
+- [hashnode-diaries](https://github.com/CreoWis/hashnode-diaries): A Next.js application uses the NPM package where you can provide any Hashnode blog URL to fetch the posts from them.
 
 ## How do you run this project locally?
-Please check the [package](./package/readme.md) and [hashnode-diaries](./hashnode-diaries/README.md) projects to learn how to run them locally.
+Please check the [package](./package/readme.md) and [hashnode-diaries](https://github.com/CreoWis/hashnode-diaries) projects to learn how to run them locally.
 
 ## Why did we create it?
 Developers should blog. At the same time, they need to customize and personaize their blog front-end user interfaces. In that case, locking the blog with a specific vendor may not be a good idea. The `Headless Hashnode` is a great innovation where we get all our blog data through GraphQL APIs along with getting the opportunity to use the Hashnode infrastructure under the hood.
