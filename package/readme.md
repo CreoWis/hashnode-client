@@ -23,54 +23,64 @@ pnpm install hashnode-client@latest
 
 The following API methods are available in the package:
 
-| API Method           | Description                                               | Input Parameters                                          | Response                                          |
-| -------------------- | --------------------------------------------------------- | --------------------------------------------------------- | ---------------------------------------------------------- |
-| `useHashnodePosts`   | Fetch all the published posts from your Hashnode publication. | - `host` (mandatory): Hashnode publication URL of your blog            | - `loading`: Indicates ongoing or completed data fetching    |
-|                      |                                                           | - `first` (optional): Number of posts to fetch at a time. The default value is 10.    | - `error`: Info about any error during data fetching         |
-|                      |                                                           | - `endCursor` (optional): Position of the last fetched post | - `pageInfo`: Object with hasNextPage and endCursor information          |
-|                      |                                                           | - `tags` (optional): Tag IDs for fetching posts                         | - `totalDocs`: Total number of posts in the Hashnode publication |
-|                      |                                                           |                                                           | - `posts`: Array of nodes with post summary information      |
-|                      |                                                           |                                                           | - `loadMorePost`: A Function to load more posts in a paginated fashion.               |
-| `useHashnodeDetails` | Fetch all the details of a particular post from a publication.               | - `host` (mandatory): Hashnode Publication URL of your blog            | - `loading`: Indicates ongoing or completed data fetching    |
-|                      |                                                           | - `slug` (mandatory): Hashnode Post slug                     | - `error`: Info about any error during data fetching         |
-|                      |                                                           |                                                           | - `post`: Object with complete details of the fetched post   |
-| `useHashnodePage` | Fetch the content of a static page from a publication.               | - `host` (mandatory): Hashnode Publication URL of your blog            | - `loading`: Indicates ongoing or completed data fetching    |
-|                      |                                                           | - `slug` (mandatory): Hashnode page slug                     | - `error`: Info about any error during data fetching         |
-|                      |                                                           |                                                           | - `page`: The page content in the HTML format   |
-
+| API Method           | Description                                                    | Input Parameters                                                                   | Response                                                                |
+| -------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `useHashnodePosts`   | Fetch all the published posts from your Hashnode publication.  | - `host` (mandatory): Hashnode publication URL of your blog                        | - `loading`: Indicates ongoing or completed data fetching               |
+|                      |                                                                | - `first` (optional): Number of posts to fetch at a time. The default value is 10. | - `error`: Info about any error during data fetching                    |
+|                      |                                                                | - `endCursor` (optional): Position of the last fetched post                        | - `pageInfo`: Object with hasNextPage and endCursor information         |
+|                      |                                                                | - `tags` (optional): Tag IDs for fetching posts                                    | - `totalDocs`: Total number of posts in the Hashnode publication        |
+|                      |                                                                |                                                                                    | - `posts`: Array of nodes with post summary information                 |
+|                      |                                                                |                                                                                    | - `loadMorePost`: A Function to load more posts in a paginated fashion. |
+| `useHashnodeDetails` | Fetch all the details of a particular post from a publication. | - `host` (mandatory): Hashnode Publication URL of your blog                        | - `loading`: Indicates ongoing or completed data fetching               |
+|                      |                                                                | - `slug` (mandatory): Hashnode Post slug                                           | - `error`: Info about any error during data fetching                    |
+|                      |                                                                |                                                                                    | - `post`: Object with complete details of the fetched post              |
+| `useHashnodePage`    | Fetch the content of a static page from a publication.         | - `host` (mandatory): Hashnode Publication URL of your blog                        | - `loading`: Indicates ongoing or completed data fetching               |
+|                      |                                                                | - `slug` (mandatory): Hashnode page slug                                           | - `error`: Info about any error during data fetching                    |
+|                      |                                                                |                                                                                    | - `page`: The page content in the HTML format                           |
 
 ## 🔥 How to use
 
 To use the library, you need to first import the API methods into your project.
 
 ```js
-import { 
-  useHashnodePosts, 
+import {
+  useHashnodePosts,
   useHashnodePostDetails,
-  useHashnodePage 
-} from  "hashnode-client";
+  useHashnodePage,
+} from "hashnode-client";
 ```
+
 Then use them with their input parameters in the React component:
 
 ```js
 const settings = { host: "blog.greenroots.info" };
 
-const { 
-  loading, 
-  posts, 
-  loadMorePost, 
-  pageInfo } = useHashnodePosts(settings);
+const { loading, posts, loadMorePost, pageInfo } = useHashnodePosts(settings);
 ```
-
 
 > Note: If you are using NextJS, please use this library in the client component only, as it uses useEffect and useState behind the scenes.
 
 ## 🤾‍♀️ hashnode-client playground(demo)
 
-We have built a demo project called `hashnode-diaries` that uses the hooks that we have mentioned above. It's a simple project that will take the URL of your publication and fetch data from hashcode, and demo ur project. 
+We have built a demo project called `hashnode-diaries` that uses the hooks that we have mentioned above. It's a simple project that will take the URL of your publication and fetch data from hashcode, and demo ur project.
 
-You can [run it locally](https://github.com/CreoWis/hashnode-client/blob/main/hashnode-diaries/README.md) and get a feel of how to use the package in a way that is beneficial to your project.
+You can [run it locally](https://github.com/CreoWis/hashnode-diaries/blob/main/README.md) and get a feel of how to use the package in a way that is beneficial to your project.
 
+You just have to clone the repo and you just start by doing.
+
+```bash
+## With NPM
+npm install
+npm run dev
+
+## With YARN
+yarn
+yarn dev
+
+## With PNPM
+pnpm install
+pnpm dev
+```
 
 ## 🛠️ How to build the hashnode-client package?
 
@@ -117,7 +127,7 @@ To create the package locally,
 
   ## With YARN
   yarn create-tar
-    
+
   ## With PNPM
   pnpm run create-tar
   ```
@@ -137,6 +147,7 @@ To create the package locally,
   ```
 
 ## 💁 How do you contribute to the project?
+
 To contribute to the hashnode-client project, please ensure the following:
 
 - You have read the [Contributing Guide](https://github.com/CreoWis/hashnode-client/blob/main/CONTRIBUTING.md) completely.
@@ -153,4 +164,3 @@ Note that it is not just about coding contribution. You can also contribute to t
 - Help us to socialize hashnode-client.
 - Anything else that impacts this project positively.
 - Open Source is all about collaboration and proper communication. Let's go.
-
