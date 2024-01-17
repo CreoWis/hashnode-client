@@ -53,7 +53,6 @@ import {
   useHashnodePosts,
   useHashnodePostDetails,
   useHashnodePage,
-  useHashnodeComments,
 } from "hashnode-client";
 ```
 
