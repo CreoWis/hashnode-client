@@ -1,23 +1,28 @@
 import { gql } from "graphql-request";
 import { getClient } from "../lib/graphQLClient";
 
-export const getAllPosts = async (host, first=10, endCursor, tags) => {
+export const getAllPosts = async (host, first = 10, endCursor, tags) => {
   const client = getClient();
 
   const data = await client.request(
     gql`
-      query allPosts($first: Int!, $host: String, $endCursor: String, $tags: [ObjectId!]) {
+      query allPosts(
+        $first: Int!
+        $host: String
+        $endCursor: String
+        $tags: [ObjectId!]
+      ) {
         publication(host: $host) {
           title
-          posts(first: $first, after: $endCursor, filter:{tags: $tags}) {
+          posts(first: $first, after: $endCursor, filter: { tags: $tags }) {
             totalDocuments
-            pageInfo{
+            pageInfo {
               hasNextPage
               endCursor
             }
             edges {
               node {
-                author{
+                author {
                   name
                   profilePicture
                 }
@@ -38,7 +43,7 @@ export const getAllPosts = async (host, first=10, endCursor, tags) => {
                 reactionCount
                 featuredAt
                 featured
-                comments(first: 10){
+                comments(first: 10) {
                   totalDocuments
                 }
               }
@@ -47,12 +52,12 @@ export const getAllPosts = async (host, first=10, endCursor, tags) => {
         }
       }
     `,
-    { 
+    {
       first: first,
       host: host,
       endCursor: endCursor,
       tags: tags,
-     }
+    }
   );
 
   return data?.publication?.posts;
@@ -66,7 +71,7 @@ export const getPost = async (host, slug) => {
       query postDetails($host: String, $slug: String!) {
         publication(host: $host) {
           post(slug: $slug) {
-            author{
+            author {
               name
               profilePicture
             }
@@ -74,7 +79,7 @@ export const getPost = async (host, slug) => {
             title
             subtitle
             readTimeInMinutes
-            content{
+            content {
               html
             }
             tags {
@@ -89,19 +94,19 @@ export const getPost = async (host, slug) => {
             reactionCount
             featuredAt
             featured
-            comments(first: 10){
+            comments(first: 10) {
               totalDocuments
             }
           }
         }
       }
     `,
-    { 
+    {
       host: host,
-      slug: slug 
+      slug: slug,
     }
   );
-      
+
   return data?.publication?.post;
 };
 
@@ -122,57 +127,74 @@ export const getPage = async (host, slug) => {
         }
       }
     `,
-    { 
+    {
       host: host,
-      slug: slug 
+      slug: slug,
     }
   );
 
   return page?.publication?.staticPage;
 };
 
-export const getComments = async (host, slug, first=10, endCursor) => {
+export const getComments = async (host, slug, first = 10, endCursor) => {
   const client = getClient();
 
   const data = await client.request(
     gql`
-      query allPosts($first: Int!, $host: String, $slug: String!, $endCursor: String) {
+      query allPostsComments(
+        $first: Int!
+        $host: String
+        $slug: String!
+        $endCursor: String
+      ) {
         publication(host: $host) {
           post(slug: $slug) {
-            comments(first: $first, after: $endCursor){
-              pageInfo{
+            comments(first: $first, after: $endCursor) {
+              pageInfo {
                 hasNextPage
                 endCursor
               }
               totalDocuments
-              edges{
-                node{
+              edges {
+                node {
                   dateAdded
                   author {
                     name
                     profilePicture
                   }
-                  content{
+                  replies(first: 50) {
+                    edges {
+                      node {
+                        content {
+                          html
+                        }
+                        author {
+                          name
+                          profilePicture
+                        }
+                        dateAdded
+                      }
+                    }
+                  }
+                  content {
                     html
                   }
                   totalReactions
-                  myTotalReactions
                   stamp
                 }
               }
             }
-                  
           }
         }
       }
     `,
-    { 
+    {
       first: first,
-      slug: slug,
       host: host,
-      endCursor: endCursor
-     }
+      slug: slug,
+      endCursor: endCursor,
+    }
   );
 
-  return data?.publication?.posts?.comments;
+  return data?.publication?.post?.comments;
 };
