@@ -38,7 +38,7 @@ export default function useHashnodeComments(settings = {}) {
   }, [host, first, endCursor, slug]);
 
   const loadMoreComments = useCallback(() => {
-    getCommentsForPost(host, slug, first, endCursor, true);
+    getCommentsForPost(host, slug, first, pageInfo.endCursor, true);
   }, [pageInfo.endCursor]);
 
   return {
