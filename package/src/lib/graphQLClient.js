@@ -2,7 +2,11 @@
 
 import { GraphQLClient } from "graphql-request";
 
-export const getClient = () => {
+export const getClient = (token = null) => {
   const client = new GraphQLClient(`https://gql.hashnode.com`);
+
+  if (token) {
+    client.setHeader("Authorization", `Bearer ${token}`);
+  }
   return client;
-}
+};

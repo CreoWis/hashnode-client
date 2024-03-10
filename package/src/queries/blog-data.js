@@ -1,6 +1,30 @@
 import { gql } from "graphql-request";
 import { getClient } from "../lib/graphQLClient";
 
+export const getBlogInfo = async (host) => {
+  const client = getClient();
+
+  const data = await client.request(
+    gql`
+      query Publication($host: String) {
+        publication(host: $host) {
+          id
+          isTeam
+          title
+          about {
+            markdown
+          }
+        }
+      }
+    `,
+    {
+      host: host,
+    }
+  );
+
+  return data?.publication;
+};
+
 export const getAllPosts = async (host, first = 10, endCursor, tags) => {
   const client = getClient();
 
@@ -13,6 +37,7 @@ export const getAllPosts = async (host, first = 10, endCursor, tags) => {
         $tags: [ObjectId!]
       ) {
         publication(host: $host) {
+          id
           title
           posts(first: $first, after: $endCursor, filter: { tags: $tags }) {
             totalDocuments
@@ -70,6 +95,7 @@ export const getPost = async (host, slug) => {
     gql`
       query postDetails($host: String, $slug: String!) {
         publication(host: $host) {
+          id
           post(slug: $slug) {
             author {
               name
@@ -117,6 +143,7 @@ export const getPage = async (host, slug) => {
     gql`
       query pageData($host: String, $slug: String!) {
         publication(host: $host) {
+          id
           staticPage(slug: $slug) {
             title
             content {
@@ -148,6 +175,7 @@ export const getComments = async (host, slug, first = 10, endCursor) => {
         $endCursor: String
       ) {
         publication(host: $host) {
+          id
           post(slug: $slug) {
             comments(first: $first, after: $endCursor) {
               pageInfo {
